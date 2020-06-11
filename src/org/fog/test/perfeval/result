@@ -1,0 +1,116 @@
+#Shortest deadline first
+Starting TestApplication...
+0.0 Submitted application test_app
+=========================================
+============== RESULTS ==================
+=========================================
+EXECUTION TIME : 124775
+=========================================
+APPLICATION LOOP DELAYS
+=========================================
+[IoTSensor, clientModule, mainModule, clientModule, IoTActuator] ---> 137.8857505195898
+=========================================
+TUPLE CPU EXECUTION DELAY
+=========================================
+RawData ---> 9.549647480830632
+ResultData ---> 21.094107142926205
+IoTSensor ---> 0.1937500000003638
+StoreData ---> 0.7696428570189331
+=========================================
+cloud : Energy Consumed = 1.4558870425786903E7
+g-0 : Energy Consumed = 1072372.961875772
+e-0-0 : Energy Consumed = 874707.2785894757
+e-0-1 : Energy Consumed = 872560.7110644729
+e-0-2 : Energy Consumed = 842580.7528573179
+g-1 : Energy Consumed = 1066218.2900000014
+e-1-0 : Energy Consumed = 874841.0510608924
+e-1-1 : Energy Consumed = 874885.3004305358
+e-1-2 : Energy Consumed = 874885.8603305377
+Cost of execution in cloud = 1756373.261875058
+Total network usage = 2664.06
+
+#Using moduleplacementedgewards
+Starting TestApplication...
+Placement of operator mainModule on device e-0-0 successful.
+Placement of operator mainModule on device e-0-1 successful.
+Placement of operator mainModule on device e-0-2 successful.
+Placement of operator mainModule on device e-1-0 successful.
+Placement of operator mainModule on device e-1-1 successful.
+Placement of operator mainModule on device e-1-2 successful.
+Creating clientModule on device e-1-1
+Creating mainModule on device e-1-1
+Creating storageModule on device cloud
+Creating clientModule on device e-0-0
+Creating mainModule on device e-0-0
+Creating clientModule on device e-1-2
+Creating mainModule on device e-1-2
+Creating clientModule on device e-0-1
+Creating mainModule on device e-0-1
+Creating clientModule on device e-0-2
+Creating mainModule on device e-0-2
+Creating clientModule on device e-1-0
+Creating mainModule on device e-1-0
+0.0 Submitted application test_app
+=========================================
+============== RESULTS ==================
+=========================================
+EXECUTION TIME : 2732
+=========================================
+APPLICATION LOOP DELAYS
+=========================================
+[IoTSensor, clientModule, mainModule, clientModule, IoTActuator] ---> 9.53750000000246
+=========================================
+TUPLE CPU EXECUTION DELAY
+=========================================
+RawData ---> 1.9750000000003638
+ResultData ---> 0.1312500000003638
+IoTSensor ---> 0.1312500000003638
+StoreData ---> 0.18884353741599452
+=========================================
+cloud : Energy Consumed = 1.34773259086937E7
+g-0 : Energy Consumed = 834332.9999999987
+e-0-0 : Energy Consumed = 847210.9622500865
+e-0-1 : Energy Consumed = 847210.9622500865
+e-0-2 : Energy Consumed = 847210.9622500865
+g-1 : Energy Consumed = 834332.9999999987
+e-1-0 : Energy Consumed = 847210.9622500865
+e-1-1 : Energy Consumed = 847210.9622500865
+e-1-2 : Energy Consumed = 847210.9622500865
+Cost of execution in cloud = 223044.3262502146
+Total network usage = 2157.12
+
+
+#Default
+Starting TestApplication...
+Creating storageModule on device cloud
+Creating clientModule on device e-0-1
+Creating clientModule on device e-1-0
+Creating clientModule on device e-0-2
+Creating clientModule on device e-1-1
+Creating clientModule on device e-1-2
+Creating clientModule on device e-0-0
+0.0 Submitted application test_app
+=========================================
+============== RESULTS ==================
+=========================================
+EXECUTION TIME : 800
+=========================================
+APPLICATION LOOP DELAYS
+=========================================
+[IoTSensor, clientModule, mainModule, clientModule, IoTActuator] ---> null
+=========================================
+TUPLE CPU EXECUTION DELAY
+=========================================
+IoTSensor ---> 0.1312500000003638
+=========================================
+cloud : Energy Consumed = 1.6448470535714285E7
+g-0 : Energy Consumed = 834332.9999999987
+e-0-0 : Energy Consumed = 826273.6926250231
+e-0-1 : Energy Consumed = 826273.6926250231
+e-0-2 : Energy Consumed = 826273.6926250231
+g-1 : Energy Consumed = 834332.9999999987
+e-1-0 : Energy Consumed = 826273.6926250231
+e-1-1 : Energy Consumed = 826273.6926250231
+e-1-2 : Energy Consumed = 826273.6926250231
+Cost of execution in cloud = 4435300.0
+Total network usage = 4315.68
