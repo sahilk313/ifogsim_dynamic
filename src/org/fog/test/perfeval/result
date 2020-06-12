@@ -114,3 +114,186 @@ e-1-1 : Energy Consumed = 826273.6926250231
 e-1-2 : Energy Consumed = 826273.6926250231
 Cost of execution in cloud = 4435300.0
 Total network usage = 4315.68
+
+
+
+
+
+
++++++++++++++BRAND NEW LOGS++++++++++++++++++
+For equal distribution of resources(5 runs):
+NumClouds = 1
+NumGateways = 5
+numOfEndDevPerGateway = 2
+sensingInterval = 3
+expiry = random(30, 50)
+
+1.
+=========================================
+============== RESULTS ==================
+=========================================
+EXECUTION TIME : 3136
+EXPIRED: 11877
+COMPLETED: 12477
+=========================================
+APPLICATION LOOP DELAYS
+=========================================
+[IoTSensor, clientModule, mainModule, clientModule, IoTActuator] ---> 42.43990079365069
+=========================================
+TUPLE CPU EXECUTION DELAY
+=========================================
+RawData ---> 6.23686445498943
+ResultData ---> 4.652857110670638
+IoTSensor ---> 0.1937500000003638
+StoreData ---> 0.6357142697488476
+=========================================
+cloud : Energy Consumed = 1.3327255967929687E7
+g-0 : Energy Consumed = 1073070.769258773
+e-0-0 : Energy Consumed = 874755.083687526
+e-0-1 : Energy Consumed = 874722.1959250261
+e-0-2 : Energy Consumed = 826974.8019500095
+g-1 : Energy Consumed = 1070999.4300000013
+e-1-0 : Energy Consumed = 874731.9560000261
+e-1-1 : Energy Consumed = 874740.100000026
+e-1-2 : Energy Consumed = 874740.100000026
+Cost of execution in cloud = 10286.941875
+Total network usage = 1445.11
+
+2.
+=========================================
+============== RESULTS ==================
+=========================================
+EXECUTION TIME : 2730
+EXPIRED: 11868
+COMPLETED: 12522
+=========================================
+APPLICATION LOOP DELAYS
+=========================================
+[IoTSensor, clientModule, mainModule, clientModule, IoTActuator] ---> 41.79854166666661
+=========================================
+TUPLE CPU EXECUTION DELAY
+=========================================
+RawData ---> 4.772612061866399
+ResultData ---> 5.0655357142858675
+IoTSensor ---> 0.1937500000003638
+StoreData ---> 0.36944971822079986
+=========================================
+cloud : Energy Consumed = 1.3329915291322544E7
+g-0 : Energy Consumed = 1073070.769258773
+e-0-0 : Energy Consumed = 874757.170587526
+e-0-1 : Energy Consumed = 874720.7898125261
+e-0-2 : Energy Consumed = 826996.7525750095
+g-1 : Energy Consumed = 1070999.4300000013
+e-1-0 : Energy Consumed = 874731.936912526
+e-1-1 : Energy Consumed = 874740.100000026
+e-1-2 : Energy Consumed = 874740.100000026
+Cost of execution in cloud = 14057.121874999986
+Total network usage = 1446.46
+
+3.
+For expiry = random(10,50)
+=========================================
+============== RESULTS ==================
+=========================================
+EXECUTION TIME : 2239
+EXPIRED: 11926
+COMPLETED: 12300
+=========================================
+APPLICATION LOOP DELAYS
+=========================================
+[IoTSensor, clientModule, mainModule, clientModule, IoTActuator] ---> 37.938156250000034
+=========================================
+TUPLE CPU EXECUTION DELAY
+=========================================
+RawData ---> 4.744077441594266
+ResultData ---> 5.380000000000296
+IoTSensor ---> 0.1937500000003638
+StoreData ---> 0.5687500531923698
+=========================================
+cloud : Energy Consumed = 1.3326763064358259E7
+g-0 : Energy Consumed = 1073070.769258773
+e-0-0 : Energy Consumed = 874754.5301500261
+e-0-1 : Energy Consumed = 874719.008312526
+e-0-2 : Energy Consumed = 826958.5630321524
+g-1 : Energy Consumed = 1070999.4300000013
+e-1-0 : Energy Consumed = 874731.9560000261
+e-1-1 : Energy Consumed = 874740.100000026
+e-1-2 : Energy Consumed = 874740.100000026
+Cost of execution in cloud = 9588.141874999996
+Total network usage = 1442.96
+
+
+
+
+
+
++++++++++++++BRAND NEW LOGS++++++++++++++++++
+For priority based distribution of resources(5 runs):
+NumClouds = 1
+NumGateways = 2
+numOfEndDevPerGateway = 3
+sensingInterval = 5
+expiry = random(30, 50)
+
+1.
+=========================================
+============== RESULTS ==================
+=========================================
+EXECUTION TIME : 4509
+EXPIRED: 10898
+COMPLETED: 19263
+=========================================
+APPLICATION LOOP DELAYS
+=========================================
+[IoTSensor, clientModule, mainModule, clientModule, IoTActuator] ---> 34.487392686260904
+=========================================
+TUPLE CPU EXECUTION DELAY
+=========================================
+RawData ---> 5.074979720339476
+ResultData ---> 3.122333069017933
+IoTSensor ---> 0.19421181093629525
+StoreData ---> 0.1601594493057552
+=========================================
+cloud : Energy Consumed = 1.3479850765887275E7
+g-0 : Energy Consumed = 1073072.2633649244
+e-0-0 : Energy Consumed = 875092.0798625188
+e-0-1 : Energy Consumed = 874516.4181321614
+e-0-2 : Energy Consumed = 860855.3035071628
+g-1 : Energy Consumed = 1071902.2287605724
+e-1-0 : Energy Consumed = 842837.9796428821
+e-1-1 : Energy Consumed = 874726.5178803828
+e-1-2 : Energy Consumed = 874758.6148750257
+Cost of execution in cloud = 226623.8706250006
+Total network usage = 1551.56
+
+
+2.
+=========================================
+============== RESULTS ==================
+=========================================
+EXECUTION TIME : 5697
+EXPIRED: 10066
+COMPLETED: 25527
+=========================================
+APPLICATION LOOP DELAYS
+=========================================
+[IoTSensor, clientModule, mainModule, clientModule, IoTActuator] ---> 34.381481781144345
+=========================================
+TUPLE CPU EXECUTION DELAY
+=========================================
+RawData ---> 6.102340520710076
+ResultData ---> 5.243980623542437
+IoTSensor ---> 0.1936497281016255
+StoreData ---> 0.36782631864133963
+=========================================
+cloud : Energy Consumed = 1.360948621088727E7
+g-0 : Energy Consumed = 1073072.2633649174
+e-0-0 : Energy Consumed = 874902.1701446637
+e-0-1 : Energy Consumed = 874250.0511607365
+e-0-2 : Energy Consumed = 861270.4075500213
+g-1 : Energy Consumed = 1071223.6654660746
+e-1-0 : Energy Consumed = 843986.2118375275
+e-1-1 : Energy Consumed = 874691.5350375277
+e-1-2 : Energy Consumed = 874683.6582625277
+Cost of execution in cloud = 410410.8306250032
+Total network usage = 1641.06

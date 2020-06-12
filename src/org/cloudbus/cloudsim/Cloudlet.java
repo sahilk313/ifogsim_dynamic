@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import org.cloudbus.cloudsim.core.CloudSim;
 
@@ -150,7 +151,9 @@ public class Cloudlet {
 	/** The required files. */
 	private List<String> requiredFiles = null;   // list of required filenames
 	public double expiry=0;
-	public double timeAllotted = 15;
+	public double timeAllotted;
+	public static final int minTime = 30;
+	public static final int maxTime = 200;
 
 	/**
 	 * Allocates a new Cloudlet object. The Cloudlet length, input and output file sizes should be
@@ -173,6 +176,12 @@ public class Cloudlet {
 	 * @pre cloudletOutputSize >= 1
 	 * @post $none
 	 */
+	private static double getvalue(double min, double max)
+	{
+		Random r = new Random();
+		double randomValue = min + (max - min) * r.nextDouble();
+		return randomValue;
+	}
 	public Cloudlet(
 			final int cloudletId,
 			final long cloudletLength,
@@ -192,6 +201,7 @@ public class Cloudlet {
 				utilizationModelRam,
 				utilizationModelBw,
 				false);
+		timeAllotted = getvalue(minTime, maxTime);
 		expiry = CloudSim.clock() + timeAllotted;
 		vmId = -1;
 		accumulatedBwCost = 0.0;
@@ -244,6 +254,7 @@ public class Cloudlet {
 				utilizationModelRam,
 				utilizationModelBw,
 				record);
+		timeAllotted = getvalue(minTime, maxTime);
 		expiry = CloudSim.clock() + timeAllotted;
 		vmId = -1;
 		accumulatedBwCost = 0.0;
@@ -294,6 +305,7 @@ public class Cloudlet {
 				utilizationModelRam,
 				utilizationModelBw,
 				false);
+		timeAllotted = getvalue(minTime, maxTime);
 		expiry = CloudSim.clock() + timeAllotted;
 		vmId = -1;
 		accumulatedBwCost = 0.0;
@@ -334,6 +346,7 @@ public class Cloudlet {
 			final UtilizationModel utilizationModelRam,
 			final UtilizationModel utilizationModelBw,
 			final boolean record) {
+		timeAllotted = getvalue(minTime, maxTime);
 		expiry = CloudSim.clock() + timeAllotted;
 		userId = -1;          // to be set by a Broker or user
 		status = CREATED;

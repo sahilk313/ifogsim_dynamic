@@ -9,6 +9,7 @@ package org.cloudbus.cloudsim;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 
 import org.cloudbus.cloudsim.core.CloudSim;
@@ -22,7 +23,7 @@ import org.fog.entities.Tuple;
  * @author Anton Beloglazov
  * @since CloudSim Toolkit 1.0
  */
-public class CloudletSchedulerTimeShared extends CloudletScheduler {
+public class CloudletSchedulerTimeShared2 extends CloudletScheduler {
 
 	/** The cloudlet exec list. */
 	private List<? extends ResCloudlet> cloudletExecList;
@@ -45,7 +46,7 @@ public class CloudletSchedulerTimeShared extends CloudletScheduler {
 	 * @pre $none
 	 * @post $none
 	 */
-	public CloudletSchedulerTimeShared() {
+	public CloudletSchedulerTimeShared2() {
 		super();
 		cloudletExecList = new ArrayList<ResCloudlet>();
 		cloudletPausedList = new ArrayList<ResCloudlet>();
@@ -67,10 +68,34 @@ public class CloudletSchedulerTimeShared extends CloudletScheduler {
 	public double updateVmProcessing(double currentTime, List<Double> mipsShare) {
 		setCurrentMipsShare(mipsShare);
 		double timeSpam = currentTime - getPreviousTime();
+		
+		HashMap<ResCloudlet, Integer> priority = new HashMap<ResCloudlet, Integer>();
+		int totPriority = 0;
+		int totCloudlets = 0;
+		for (ResCloudlet rcl : getCloudletExecList()) {
+			totCloudlets += 1;
+			if (rcl.expiry - CloudSim.clock()<=10){
+				priority.put(rcl, 10);	//higher number means more priority
+			}
+			else if (rcl.expiry - CloudSim.clock()<=20){
+				priority.put(rcl, 5);	//higher number means more priority
+			}
+			else if (rcl.expiry - CloudSim.clock()<=30){
+				priority.put(rcl, 3);	//higher number means more priority
+			}
+			else{
+				priority.put(rcl, 1);	//higher number means more priority
+			}
+		}
+		for (Integer i : priority.values()) {
+			  totPriority += i;
+		}
 
 		for (ResCloudlet rcl : getCloudletExecList()) {
+			double mFactor = totCloudlets*((double)priority.get(rcl)/totPriority);
+			//System.out.println("Multiplication factor: "+mFactor);
 						
-			rcl.updateCloudletFinishedSoFar((long) (getCapacity(mipsShare) * timeSpam * rcl.getNumberOfPes() * Consts.MILLION));
+			rcl.updateCloudletFinishedSoFar((long) (mFactor*getCapacity(mipsShare) * timeSpam * rcl.getNumberOfPes() * Consts.MILLION));
 			//System.out.println(getTotalCurrentAllocatedMipsForCloudlet(rcl, getPreviousTime()));
 			//OLA System.out.println(CloudSim.clock()+ " : Remaining length of tuple ID "+((Tuple)rcl.getCloudlet()).getActualTupleId()+" = "+rcl.getRemainingCloudletLength());
 			
@@ -109,7 +134,7 @@ public class CloudletSchedulerTimeShared extends CloudletScheduler {
 				System.out.println("Nooooooooooooooooooooooooooooooooooooooo");
 			}
 			if (remainingLength == 0 && !toRemove.contains(rcl)) {// finished: remove from the list
-				System.out.println("Completedddddddddd");
+				System.out.println("Completeddddddddd");
 				System.out.println(expiry);
 				System.out.println(CloudSim.clock());
 				succesfullyExecuted++;

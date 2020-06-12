@@ -51,9 +51,9 @@ public class TestApplication {
 	static Map<Integer, Map<String, Integer>> additionalMipsInfo = new HashMap<Integer, Map<String, Integer>>();
 	static boolean CLOUD = false;
 	static int numOfGateways = 2;
-	static int numOfEndDevPerGateway = 5;
-	static double sensingIntervalMin = 1;
-	static double sensingIntervalMax = 10;
+	static int numOfEndDevPerGateway = 3;
+	static double sensingIntervalMin = 5;
+	static double sensingIntervalMax = 5;
 	public static void main(String[] args) {
 		Log.printLine("Starting TestApplication...");
 		try {
